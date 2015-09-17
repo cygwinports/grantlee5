@@ -1,0 +1,19 @@
+inherit qt5 cmake
+
+NAME="grantlee5"
+VERSION=5.0.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Qt document templating library"
+DESCRIPTION="The goal of Grantlee Templates is to make it easier for
+application developers to separate the structure of documents from the data
+they contain, opening the door for theming."
+HOMEPAGE="https://github.com/steveire/grantlee"
+SRC_URI="https://github.com/steveire/grantlee/archive/v${VERSION}/grantlee-v${VERSION}.tar.gz"
+SRC_DIR="grantlee-${VERSION}"
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/grantlee-qt5.git/plain/Install-headers-into-a-versioned-directory.patch"
+
+PKG_NAMES="libgrantlee5 libgrantlee5-devel"
+libgrantlee5_CONTENTS="usr/bin/*-5.dll usr/lib/grantlee/5.0/ usr/share/doc/"
+libgrantlee5_devel_REQUIRES="libQt5Core-devel libQt5Gui-devel"
+libgrantlee5_devel_CONTENTS="usr/include/Grantlee5/ usr/lib/cmake/Grantlee5/ usr/lib/lib*"
